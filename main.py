@@ -24,12 +24,15 @@ def classify(image):
     category_name = weights.meta["categories"][class_id]
     score = f"{100*score:.1f}"
     return category_name,score
-
-st.title("ResNet On ImageNet")
-image = st.file_uploader("Choose an image")
-if image is not None:
-    img = Image.open(image)
-    st.image(image, caption='Uploaded Image')
-    if st.button("Classify"):
-        name, score = classify(img)        
-        st.write(f"Predicted to be {name} with certainty {score}%.")
+tab1, tab2 = st.tabs(["About", "Test"])
+with tab1:
+    st.title("ResNet On ImageNet")
+with tab2:
+    st.title("Demo Classification")
+    image = st.file_uploader(None)
+    if image is not None:
+        img = Image.open(image)
+        st.image(image, caption='Uploaded Image')
+        if st.button("Classify"):
+            name, score = classify(img)        
+            st.write(f"Predicted to be {name} with certainty {score}%.")
