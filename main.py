@@ -2,7 +2,6 @@ import streamlit as st
 import requests
 from PIL import Image
 
-from torchvision.io import read_image
 from torchvision.models import resnet50, ResNet50_Weights
 
 def classify(image):
@@ -26,7 +25,7 @@ def classify(image):
     score = f"{100*score:.1f}"
     return category_name,score
 
-st.title("ResNet On Imagenet")
+st.title("ResNet On ImageNet")
 image = st.file_uploader("Choose an image")
 if image is not None:
     img = Image.open(image)
