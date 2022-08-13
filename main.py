@@ -30,7 +30,7 @@ with tab1:
     st.title("ResNet On ImageNet")
 with tab2:
     st.title("Demo Classification")
-    image = st.file_uploader(label=None)
+    image = st.file_uploader(label="")
     if image is not None:
         img = Image.open(image)
         st.image(image, caption='Uploaded Image')
