@@ -24,12 +24,13 @@ def classify(image):
     category_name = weights.meta["categories"][class_id]
     score = f"{100*score:.1f}"
     return category_name,score
+st.title("ResNet On ImageNet")
 tab1, tab2 = st.tabs(["About", "Test"])
 with tab1:
     st.title("ResNet On ImageNet")
 with tab2:
     st.title("Demo Classification")
-    image = st.file_uploader(None)
+    image = st.file_uploader(label=None)
     if image is not None:
         img = Image.open(image)
         st.image(image, caption='Uploaded Image')
