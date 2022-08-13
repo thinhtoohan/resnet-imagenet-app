@@ -27,9 +27,10 @@ def classify(image):
 st.title("ResNet On ImageNet")
 tab1, tab2 = st.tabs(["About", "Test"])
 with tab1:
-    st.title("ResNet On ImageNet")
+    st.header("ResNet On ImageNet")
+    st.markdown("PyTorch, specifically, torchvision has a lot of models and pre-trained weights. CNN Models are mostly trained on ImageNet. Hyperparameters can be found [here](https://github.com/pytorch/vision/issues/3995#issuecomment-1013906621).")
 with tab2:
-    st.title("Demo Classification")
+    st.header("Demo Classification")
     image = st.file_uploader(label="")
     if image is not None:
         img = Image.open(image)
