@@ -30,7 +30,6 @@ image = st.file_uploader("Choose an image")
 if image is not None:
     img = Image.open(image)
     st.image(image, caption='Uploaded Image')
-if st.button("Classify"):
-    img = Image.open(image)
-    name, score = classify(img)        
-    st.write(f"Predicted to be {name} with certainty {score}%.")
+    if st.button("Classify"):
+        name, score = classify(img)        
+        st.write(f"Predicted to be {name} with certainty {score}%.")
